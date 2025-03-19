@@ -6,7 +6,6 @@ export default defineNuxtConfig({
   },
   
   css: ['~/assets/css/tailwind.css'],
-  shadcn: {},
 
   modules: [
     '@nuxt/eslint',
