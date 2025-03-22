@@ -1,4 +1,4 @@
-import './lib/env'
+import env from './lib/env'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     'shadcn-nuxt',
     '@nuxtjs/tailwindcss',
+    'nuxt-vuefire',
   ],
   devtools: {
     enabled: true,
@@ -21,6 +22,13 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       stylistic: true,
+    },
+  },
+  vuefire: {
+    config: env.FIREBASE_APP_CONFIG,
+    auth: {
+      enabled: true,
+      sessionCookie: false,
     },
   },
 })
