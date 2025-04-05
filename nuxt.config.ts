@@ -1,34 +1,22 @@
-import env from './lib/env'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	modules: [
-		'@nuxt/eslint',
-		'@nuxt/fonts',
-		'@nuxt/icon',
-		'@nuxt/image',
-		'@nuxt/scripts',
-		'@nuxt/test-utils',
-		'shadcn-nuxt',
-		'@nuxtjs/tailwindcss',
-		'nuxt-vuefire',
-	],
-	devtools: {
-		enabled: true,
-	},
+  compatibilityDate: "2024-11-01",
+  devtools: { enabled: true },
 
-	css: ['~/assets/css/tailwind.css'],
-	compatibilityDate: '2024-11-01',
-	eslint: {
-		config: {
-			standalone: false,
-		},
-	},
-	vuefire: {
-		config: env.FIREBASE_APP_CONFIG,
-		auth: {
-			enabled: true,
-			sessionCookie: false,
-		},
-	},
-})
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/icon",
+    "@nuxt/image",
+    "@nuxt/scripts",
+    "shadcn-nuxt",
+  ],
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+  css: ["~/assets/css/main.css"],
+});
